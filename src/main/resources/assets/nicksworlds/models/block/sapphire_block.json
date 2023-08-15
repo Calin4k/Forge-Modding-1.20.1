@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "nickmod:block/sapphire_block"
+    "all": "nicksworlds:block/sapphire_block"
   }
 }

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "nickmod:block/sapphire_block"
+      "model": "nicksworlds:block/sapphire_block"
     }
   }
 }
