@@ -3,6 +3,7 @@ package net.Calin.nicksworlds ;
 import com.mojang.logging.LogUtils;
 import net.Calin.nicksworlds.Item.ModCreativeModTabs;
 import net.Calin.nicksworlds.Item.ModItems;
+import net.Calin.nicksworlds.block.ModBlocks;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,7 +34,7 @@ public class NickMod
         ModItems.register(modEventBus);
 
         ModCreativeModTabs.register(modEventBus);
-
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
