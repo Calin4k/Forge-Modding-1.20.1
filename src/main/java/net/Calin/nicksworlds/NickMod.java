@@ -1,6 +1,9 @@
 package net.Calin.nicksworlds ;
 
 import com.mojang.logging.LogUtils;
+import net.Calin.nicksworlds.Item.ModCreativeModTabs;
+import net.Calin.nicksworlds.Item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -27,6 +30,10 @@ public class NickMod
     public NickMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+
+        ModCreativeModTabs.register(modEventBus);
+
 
         modEventBus.addListener(this::commonSetup);
 
@@ -41,7 +48,10 @@ public class NickMod
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SAPPHIRE);
+            event.accept(ModItems.RAW_SAPPHIRE);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
